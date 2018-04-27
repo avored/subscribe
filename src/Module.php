@@ -23,6 +23,7 @@ class Module extends ServiceProvider
         $this->registerAdminMenu();
         $this->registerPermission();
         $this->registerBreadcrumb();
+        $this->publishFiles();
     }
 
 
@@ -120,5 +121,18 @@ class Module extends ServiceProvider
         $permissionGroup->addPermission('admin-subscribe-destroy')
             ->label('Subscriber Destroy')
             ->routes('admin.subscribe.destroy');
+    }
+
+    /**
+     * Publish files paths for this avo red module.
+     *
+     * @return void
+     */
+    public function publishFiles() {
+
+        $this->publishes([
+            __DIR__ . '/../resources/views' => base_path('themes/avored/default/vendor')
+        ],'avored-module-views');
+
     }
 }
