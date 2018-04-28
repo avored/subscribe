@@ -59,17 +59,14 @@ class Module extends ServiceProvider
     protected function registerAdminMenu()
     {
 
-        AdminMenuFacade::add('promotion')
-            ->label('Promotion')
-            ->route('#')
-            ->icon('fas fa-bullhorn');
-        $promotionMenu = AdminMenuFacade::get('promotion');
+
+        $systemMenu = AdminMenuFacade::get('system');
         $subscribeMenu = new AdminMenu();
         $subscribeMenu->key('subscribe')
             ->label('Subscribe')
             ->route('admin.subscribe.index')
             ->icon('fas fa-users');
-        $promotionMenu->subMenu('subscribe', $subscribeMenu);
+        $systemMenu->subMenu('subscribe', $subscribeMenu);
 
     }
 
