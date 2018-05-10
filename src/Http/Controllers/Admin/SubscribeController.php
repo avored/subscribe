@@ -1,12 +1,12 @@
 <?php
 namespace AvoRed\Subscribe\Http\Controllers\Admin;
 
-use AvoRed\Ecommerce\Http\Controllers\Admin\AdminController;
+use AvoRed\Ecommerce\Http\Controllers\Controller;
 use AvoRed\Subscribe\Models\Database\Subscribe;
 use AvoRed\Subscribe\DataGrid\Subscribe as SubscribeGrid;
 use AvoRed\Subscribe\Http\Requests\SubscribeRequest;
 
-class SubscribeController extends AdminController
+class SubscribeController extends Controller
 {
     /**
      * Display a listing of the Subscribe.
@@ -65,7 +65,7 @@ class SubscribeController extends AdminController
     /**
      * Update the specified subscribe in database.
      *
-     * @param \AvoRed\Ecommerce\Http\Requests\Admin\Subscribe $request
+     * @param \AvoRed\Subscribe\Http\Requests\SubscribeRequest $request
      * @param int $id
      *
      * @return \Illuminate\Http\Response
